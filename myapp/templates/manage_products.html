@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Products</title>
+</head>
+<body>
+    <h2>Manage Products</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {{ product.name }} - Price: ${{ product.price }}
+                <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
